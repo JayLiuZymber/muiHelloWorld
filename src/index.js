@@ -1,6 +1,6 @@
 /* 
-【React.js入門 - 06】 JSX (下) - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10216468
+【React.js入門 - 07】 function component - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10217021
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -8,28 +8,47 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const getValue=(event)=>{
-  console.log(event.target.value)
+/* 加入下面這一段 */
+function App2(){
+  return(
+    <button>大家好</button>
+  );
 }
-const getValue2=(value)=>{
-  console.log(value)
+/* 加入上面這一段 */
+// 元素名稱第一個字母必須要是大寫、和函式(或class)名稱相同
+function app3(){
+  return(
+    <button>大家好3</button>
+  );
 }
+
+function Progress(){
+  const barWidth="50%";
+  return(
+    <div>
+      <div className="progress-back" style={{backgroundColor:"rgba(0,0,0,0.2)",width:"200px",height:"7px",borderRadius:"10px"}}>
+        <div className="progress-bar" style={{backgroundColor:"#fe5196",width:barWidth,height:"100%",borderRadius:"10px"}}></div>
+      </div>
+    </div>
+  );
+}
+/* 加入上面這一段 */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  /* 修改div中的東西，改為<App/> */
   <div>
-    <button value={true} > 是 </button>
-    <button value > 是 </button>
+    <App2/>
+    <app3/>
+    <Progress/>
 
-    <button value="true" onclick="myFunction(參數)">是</button>
-    <button value={true}  onClick={ null }>是</button>
-    <input type="text" onChange={ null }/>
+    <App2/>
+    <App2/>
+    <App2/>
 
-    <button value="true" onclick="myFunction(參數)">是</button>
-    <button value={true} onClick={getValue}>按下以取得數值 </button>
-    <button value={true} onClick={(event)=>{getValue2(event.target.value)}}>
-            按下以取得數值 
-    </button>
+    <App/>
+    <App/>
+    <App/>
   </div>
 );
 
