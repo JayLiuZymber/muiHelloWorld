@@ -8,41 +8,32 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const testFunction =()=> {
-  return( <button>大家好</button> );
-}
-/*
-const testFunction2 =()=> {
-  return( 
-    <button> 大家好 </button>
-    <h1> 我不好 </h1>
-  );
-}
-//這個函式因為傳遞的有2個元素，會被compiler視為錯誤語法
-*/
-const testFunction3 =()=> {
-  return( 
-      <div>
-          <button> 大家好 </button>
-          <h1> 我不好 </h1>
-      </div>
-  );
-}
-//這個函式因為把很多元素包在1個元素內，等於傳遞時是傳1個元素，會被compiler視為正確語法
-const testFunction4 =()=> {
-  return( 
-      <React.Fragment>
-          <button> 大家好! </button>
-          <h1> 我不好! </h1>
-      </React.Fragment>
-  );
+// const showOne = true;
+const showOne = false;
+const styleArgument = { fontSize: '100px', color: 'red' };
+const multiButton=()=>{
+  var output=[];
+  for(let i=0;i<4;++i)
+      output.push(<button>我是第{i}個按鍵</button>)
+  return output;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // testFunction()
-  // testFunction3()
-  testFunction4()
+  // <h1> { (showOne==true) ? 1 : 0 } </h1>
+  
+  // <h1 style = { styleArgument } > Hello, world! </h1>
+
+  // <h1 style = {{ fontSize: '100px', color: 'red' }} > Hello, world! </h1>
+
+  //這是錯誤的寫法
+  // <h1 class = "title" > Hello, world! </h1>
+  //這是正確的寫法
+  // <h1 className = "title" > Hello, world! </h1>
+
+  <div>
+    { multiButton() }
+  </div>
 );
 
 // If you want to start measuring performance in your app, pass a function
