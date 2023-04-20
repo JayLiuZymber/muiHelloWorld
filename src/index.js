@@ -1,6 +1,6 @@
 /* 
-【React.js入門 - 07】 function component - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10217021
+【React.js入門 - 08】 用props綁定資料 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10217533
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -8,47 +8,31 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-/* 加入下面這一段 */
-function App2(){
+function App2(props){
   return(
-    <button>大家好</button>
+    <button> {props.number +' '+ props.getData} </button>
   );
 }
-/* 加入上面這一段 */
-// 元素名稱第一個字母必須要是大寫、和函式(或class)名稱相同
-function app3(){
+function App3(props){
   return(
-    <button>大家好3</button>
+    <button> {`${props.number} ${props.getData}`} </button>
   );
 }
-
-function Progress(){
-  const barWidth="50%";
+// props不能被元件自己更改(read-only)
+function App4(props){
   return(
-    <div>
-      <div className="progress-back" style={{backgroundColor:"rgba(0,0,0,0.2)",width:"200px",height:"7px",borderRadius:"10px"}}>
-        <div className="progress-bar" style={{backgroundColor:"#fe5196",width:barWidth,height:"100%",borderRadius:"10px"}}></div>
-      </div>
-    </div>
+    <button> {this.props.number=88} </button>
   );
 }
-/* 加入上面這一段 */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  /* 修改div中的東西，改為<App/> */
+  //在App標籤中加入name屬性
   <div>
-    <App2/>
-    <app3/>
-    <Progress/>
-
-    <App2/>
-    <App2/>
-    <App2/>
-
-    <App/>
-    <App/>
-    <App/>
+    <App name="我的名字"/>
+    <App2 number="87" getData="true"/>
+    <App3 number={87} getData={true}/>
+    {/* <App4 number={87} getData={true}/> */}
   </div>
 );
 
