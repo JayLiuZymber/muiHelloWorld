@@ -1,39 +1,59 @@
-/* 
-生命週期 Version 17
-constructor() -> static getDerivedStateFromProps() -> render() -> 渲染DOM -> componentDidMount()
- */
 import React, { Component } from 'react';
 
 class Baby extends Component{
     constructor(props) {
         super(props);
         this.state={
-            isRightDad: true
+            isRightDad: true,
+            isGetData: false,
+            Mom: ""
         }
+        this.ajaxSimulator=this.ajaxSimulator.bind(this)
     }
 
-    static getDerivedStateFromProps(props,state){
-        if(props.dad!=="Chang")
-            return {isRightDad:false}
+    componentWillMount(){
+        if(this.props.dad!=="Chang")
+            this.setState({isRightDad:false})
+    }
+
+    ajaxSimulator(){
+        setTimeout(()=>{this.setState({isGetData:true, Mom:"小美"})},3000)
     }
 
     componentDidMount(){
-        if(this.state.isRightDad===true)
-            document.getElementById('msg').innerHTML="他的媽媽是小美";
-        else
-            document.getElementById('msg').innerHTML="他的媽媽，是誰，幹你X事";
+        this.ajaxSimulator();
+        document.getElementById("talk").append("爸!")
+        // document.getElementById("talk").append(
+        //     '<div id="callDad">爸!!</div>'
+        // )
+        let dadElement = document.createElement('div');
+        dadElement.setAttribute('id','callDad');
+        dadElement.textContent = "爸!!!";
+        document.getElementById("talk2").append(dadElement)
+
+        window.addEventListener('mousedown', this.IWasClick)
     }
 
+    componentWillUnmount(){
+        document.getElementById("talk").innerHTML="";
+        document.getElementById("callDad").remove();
+
+        window.removeEventListener('mousedown',this.IWasClick);
+    }
+
+    IWasClick(){
+        console.log("啊!我被點了!")
+    }    
+
     render(){
-        // if(this.state.isRightDad===true)
-        //     document.getElementById('msg').innerHTML="他的媽媽是小美";
-        // else
-        //     document.getElementById('msg').innerHTML="他的媽媽，是誰，幹你X事";
-        return(
-            <div id="msg">
-                讀取中
-            </div>
-        );
+        if(this.state.isGetData===false)
+            return(
+                <div id="msg">讀取中</div>
+            );
+        else
+            return(
+                <div id="msg">他的媽媽是{this.state.Mom}</div>
+            );                
     }
 }
 export default Baby;

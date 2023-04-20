@@ -1,23 +1,19 @@
 /* 
-【React.js入門 - 17】 React生命週期(2/4): Mount(下) - 應該多用的componentDidMount - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10221975
+【React.js入門 - 18】 React生命週期(3/4): Unmount - 只有componentWillUnmount - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10222490
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Baby from './Baby';
-import Baby2 from './Baby2';
-import Baby3 from './Baby3';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <Baby dad="Chang"/>
-    <Baby dad="Wang"/>
-    <Baby2 dad="Chang"/>
-    <Baby2 dad="Wang"/>
-    <Baby3 dad="Chang"/>
+    <App/>
+    <div id="talk"></div>
+    <div id="talk2"></div>
   </div>
 );
 
