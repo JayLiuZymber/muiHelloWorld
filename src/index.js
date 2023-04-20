@@ -1,32 +1,23 @@
 /* 
-【React.js入門 - 16】 React生命週期(1/4): Mount(上)- 在渲染以前 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10221346
+【React.js入門 - 17】 React生命週期(2/4): Mount(下) - 應該多用的componentDidMount - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10221975
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import Baby from './Baby';
+import Baby2 from './Baby2';
+import Baby3 from './Baby3';
 import reportWebVitals from './reportWebVitals';
 
-/*
-How to Check React Version? [React Latest Version]
-https://monovm.com/blog/how-to-check-react-version/#How-to-Check-React-Version?-[React-JS-Version]
-
-確認React版本
-$ npm view react version
-18.2.0
-$ npm list
-$ npm ls
-...
-├── react-dom@18.2.0
- */
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <App />
     <Baby dad="Chang"/>
     <Baby dad="Wang"/>
+    <Baby2 dad="Chang"/>
+    <Baby2 dad="Wang"/>
+    <Baby3 dad="Chang"/>
   </div>
 );
 

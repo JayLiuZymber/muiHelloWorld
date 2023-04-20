@@ -1,6 +1,6 @@
 /* 
 生命週期 Version 17
-constructor() -> static getDerivedStateFromProps() -> render() -> 渲染DOM -> ......(渲染後的生命週期)
+constructor() -> static getDerivedStateFromProps() -> render() -> 渲染DOM -> componentDidMount()
  */
 import React, { Component } from 'react';
 
@@ -11,25 +11,29 @@ class Baby extends Component{
             isRightDad: true
         }
     }
-    
+
     static getDerivedStateFromProps(props,state){
         if(props.dad!=="Chang")
             return {isRightDad:false}
     }
 
-    render(){
+    componentDidMount(){
         if(this.state.isRightDad===true)
-            return(
-                <div>
-                    他的媽媽，是小美
-                </div>
-            );
+            document.getElementById('msg').innerHTML="他的媽媽是小美";
         else
-            return(
-                <div>
-                    他的媽媽，是誰，幹你X事
-                </div>
-            );
+            document.getElementById('msg').innerHTML="他的媽媽，是誰，幹你X事";
+    }
+
+    render(){
+        // if(this.state.isRightDad===true)
+        //     document.getElementById('msg').innerHTML="他的媽媽是小美";
+        // else
+        //     document.getElementById('msg').innerHTML="他的媽媽，是誰，幹你X事";
+        return(
+            <div id="msg">
+                讀取中
+            </div>
+        );
     }
 }
 export default Baby;
