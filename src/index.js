@@ -1,19 +1,20 @@
 /* 
-【React.js入門 - 13】 useState - 在function component用state - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10220063
+【React.js入門 - 14】 Debug利器 : React-Developer-Tools - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10220526
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Progress from './Progress';
 import reportWebVitals from './reportWebVitals';
-
+/* 
+React 開發者工具 • React
+https://beta.zh-hant.reactjs.org/learn/react-developer-tools
+ */
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <App />
-    <Progress />
+    <App name="我是進度條">在index.js中轉換百分比</App>
   </div>
 );
 
