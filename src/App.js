@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react'; // 引入React定義好的React Component
 
-function App(props){ // 在函式參數中加入props
-  return(
-    <button> {props.children} </button> 
-  );
+class App extends Component{ //繼承Component類別
+  render(){
+      return(
+        <div>
+          helloWorld
+        </div>
+      );
+  }
 }
-export default App; //輸出App函式
+export default App;

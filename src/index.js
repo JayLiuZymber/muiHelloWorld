@@ -1,22 +1,28 @@
 /* 
-【React.js入門 - 10】 夾在中間的props: children - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10218605
+【React.js入門 - 11】 開始進入class component - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10219057
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Layout from './Layout';
+import App2 from './App2';
+import App3 from './App3';
 import reportWebVitals from './reportWebVitals';
+
+const changeName=(newName)=>{ 
+  name=newName;
+  console.log("hey")//加入此行
+}
+
+var name="舊的名字";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  //在App標籤中加入name屬性
   <div>
-    <App> 在index.js中設定文字 </App>
-    <Layout>
-      <App>在index.js中設定文字</App>
-    </Layout>
+    <App />
+    <App2 name={name} handleClick={changeName}/>
+    <App3 name={name} handleClick={changeName}/>
   </div>
 );
 
