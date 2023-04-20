@@ -1,6 +1,6 @@
 /* 
-【React.js入門 - 11】 開始進入class component - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10219057
+【React.js入門 - 12】 state 與 詳解setState語法 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10219561
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -10,19 +10,12 @@ import App2 from './App2';
 import App3 from './App3';
 import reportWebVitals from './reportWebVitals';
 
-const changeName=(newName)=>{ 
-  name=newName;
-  console.log("hey")//加入此行
-}
-
-var name="舊的名字";
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <App />
-    <App2 name={name} handleClick={changeName}/>
-    <App3 name={name} handleClick={changeName}/>
+    <App /><br />
+    <App2 />
+    <App3 />
   </div>
 );
 
