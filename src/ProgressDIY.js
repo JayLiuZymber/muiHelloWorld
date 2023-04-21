@@ -1,80 +1,40 @@
-import React, { Component } from 'react';
+import React, { useState,useEffect,useRef} from 'react';
 
-class ProgressDIY extends Component{
-    constructor(props) {
-        super(props);
-        this.state={ 
-            percent:0,
+const ProgressDIY=(props)=>{
+    const [percent,setPercent]=useState(10);
+
+    const mounted=useRef();
+    const tm=useRef();
+    const tmTwo=useRef();
+    
+    useEffect(()=>{
+        if(!mounted.current){ //componentDidMount
+            setPercent(props.value);
+            mounted.current=true;
         }
-        this.increase=this.increase.bind(this);
-        this.decrease=this.decrease.bind(this);
-    }
-
-    // static getDerivedStateFromProps(props, state){
-    //     return {percent:props.value};
-    // }
-    componentDidMount(){
-        this.setState({percent:this.props.value})
-    }
-
-    increase() {
-        const percent = this.state.percent + 1;
-        this.setState({ percent },()=>{
-            if (this.state.percent >= this.props.value) {
-                return;
+        else{  //componentDidUpdate
+            if(percent>props.value){
+                if(tm.current)
+                    clearTimeout(tm.current)
+                tmTwo.current=setTimeout(()=>{setPercent(percent-1)},20);
             }
-            this.tm = setTimeout(this.increase, 20);
-        });  
-    }
-
-    decrease() {
-        const percent = this.state.percent - 1;
-        this.setState({ percent },()=>{
-        if (this.state.percent <= this.props.value) {
-            return;
-        }
-        this.tmTwo = setTimeout(this.decrease, 20);
-        });  
-    }
-
-    componentDidUpdate(prevProps, prevState){
-        if(prevProps.value>this.props.value){
-            if(this.tm)
-                clearTimeout(this.tm);
-                this.decrease();
+            else if(percent<props.value){
+                if(tmTwo.current)
+                    clearTimeout(tmTwo.current)
+                tm.current=setTimeout(()=>{setPercent(percent+1)},20);
             }
-        else if(prevProps.value<this.props.value){
-            if(this.tmTwo)
-                clearTimeout(this.tmTwo);
-            this.increase();
         }
-    }
+    },[props.value,percent]);
 
-    render(){
-        return(
-            <div>
-                {/* <div className="progress-back" style={{backgroundColor:"rgba(0,0,0,0.2)",width:"200px",height:"7px",borderRadius:"10px"}}>
-                <div className="progress-bar" style={{backgroundColor:"#fe5196".toString()+"%",height:"100%",borderRadius:"10px"}}></div>
-                </div>
-                目前比率: {this.state.percent.toFixed(0)}%
-                <button>增加比率至90</button>
-                <button>減少比率至10</button>
-                 */}                 
-                {/* <div className="progress-back" style={{backgroundColor:"rgba(0,0,0,0.2)",width:"200px",height:"7px",borderRadius:"10px"}}>
-                <div className="progress-bar" style={{backgroundColor:"#fe5196",width:this.props.value.toString()+"%",height:"100%",borderRadius:"10px"}}></div>
-                </div>
-                目前比率: {this.props.value}%
-                <button value={90} onClick={this.props.onClick}>增加比率至90</button>
-                <button value={10} onClick={this.props.onClick}>減少比率至10</button>
-                 */}
-                <div className="progress-back" style={{backgroundColor:"rgba(0,0,0,0.2)",width:"200px",height:"7px",borderRadius:"10px"}}>
-                <div className="progress-bar" style={{backgroundColor:"#fe5196",width:this.state.percent.toString()+"%",height:"100%",borderRadius:"10px"}}></div>
-                </div>
-                目前比率: {this.state.percent}%
-                <button value={90} onClick={this.props.onClick}>增加比率至90</button>
-                <button value={10} onClick={this.props.onClick}>減少比率至10</button>
+    return(
+        <div>
+            <div className="progress-back" style={{backgroundColor:"rgba(0,0,0,0.2)",width:"200px",height:"7px",borderRadius:"10px"}}>
+            <div className="progress-bar" style={{backgroundColor:"#fe5196",width:percent.toString()+"%",height:"100%",borderRadius:"10px"}}></div>
             </div>
-        );
-    }
+            目前比率: {percent}%
+            <button value={90} onClick={props.onClick}>增加比率至90</button>
+            <button value={10} onClick={props.onClick}>減少比率至10</button>
+        </div>
+    )
 }
 export default ProgressDIY;

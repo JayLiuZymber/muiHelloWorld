@@ -1,6 +1,6 @@
 /* 
-【React.js入門 - 22】 元件練習(上) - 在class利用遞迴+state實作動畫 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10224160
+【React.js入門 - 23】 元件練習(下) - 在function利用useEffect遞迴+useState實作動畫 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10224560
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
