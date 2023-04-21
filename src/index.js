@@ -1,6 +1,6 @@
 /* 
-【React.js入門 - 19】 React生命週期(4/4): Update系列一次講完 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10222857
+【React.js入門 - 20】 useEffect - 在function component用生命週期 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10223344
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -11,8 +11,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    {/* <App /> */}
-    <App A='true' />
+    <App />
   </div>
 );
 

@@ -1,59 +1,32 @@
-/* 
-Ver.16.3 生命週期
-static getDerivedStateFromProps(props, state)
-shouldComponentUpdate(nextProps, nextState)
-render()
-getSnapshotBeforeUpdate()
-渲染畫面
-componentDidUpdate(prevProps, prevState)
- */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import Baby from './Baby'
 
-class App extends Component{
-    constructor(props) {
-        console.log('>constructor');
-        super(props);
-        this.state={
-            A: false,
-            B: "A假的"
+const App=()=>{
+    const [dad, setDad] = useState("Chang");
+    const [born, setBorn] = useState(true);
+    
+    const changeDad=()=>{
+        if(dad==="Chang"){
+            setDad("Wang")
         }
-        this.ajaxSimulator=this.ajaxSimulator.bind(this)
+        else{
+            setDad("Chang")
+        }
     }
 
-    ajaxSimulator(){
-        // console.log('>ajaxSimulator');
-        setTimeout(()=>{this.setState({A:true})},3000)
+    const spawnBaby=()=>{
+        if(born===true){
+            return <Baby dad={dad}/>;
+        }
     }
 
-    componentDidMount(){
-        console.log('>componentDidMount');
-        this.ajaxSimulator();
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot){
-        console.log('>componentDidUpdate');
-        // console.log(`this.props.A=${this.props.A}`);
-        // console.log(`prevProps.A=${prevProps.A}`);
-        /* 
-        if(this.props.A===true)
-            this.setState({B: "A是真的!"})
-        if(this.props.A===true && prevProps.A != this.props.A)
-            this.setState({B: "A是真的!!"})
-         */
-        // if(this.state.A===true )
-        //     this.setState({B: "A是真的!3"})
-        if(this.state.A===true && prevState.A != this.state.A)
-            this.setState({B: "A是真的!4"})
-    }
-
-    render(){
-        return(
-            <div>
-                <div>props.A={this.props.A}</div>
-                <div>state.A={this.state.A}</div>
-                <div>state.B={this.state.B}</div>
-            </div>
-        );
-    }
+    return(
+        <div>
+            {spawnBaby()}
+            <div id="talk"></div>
+            <button onClick={changeDad}>換爸爸!</button>
+            <button onClick={()=>{setBorn(!born)}}>{(born===true)?"讓他回去肚子裡":"讓他生"}</button>
+        </div>
+    );
 }
 export default App;
