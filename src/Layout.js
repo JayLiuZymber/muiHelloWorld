@@ -1,16 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import "./Layout.css";
 
 const Layout=(props)=>{
+    // inline-style
     const StyleSheet={
-        width:"100vw",
-        height:"100vh",
         // backgroundColor:"#FF2E63",
         backgroundColor:(props.location.pathname==="/")?"#FF2E63":"#08D9D6",
-        display: "flex",
-        alignItems:"center",
-        justifyContent:"center",
-        flexDirection:"column"
     }
     return(
         <div style={StyleSheet}>
