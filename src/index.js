@@ -1,6 +1,6 @@
 /* 
-【React.js入門 - 27】 我要更多更多的分頁 - react-router-dom (上) - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10226056
+【React.js入門 - 28】 我要更多更多的分頁 - react-router-dom (下) - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10226370
  */
 import React from 'react';
 import ReactDOM from 'react-dom/client';

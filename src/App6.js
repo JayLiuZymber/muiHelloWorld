@@ -1,7 +1,7 @@
 import React from 'react';
-/* 
-終究都要學 React 何不現在學呢？ - React Router - 基礎與介紹 - (24) - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
-https://ithelp.ithome.com.tw/articles/10303610?sc=rss.iron
+/*
+【React.js入門 - 28】 我要更多更多的分頁 - react-router-dom (下) - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10226370
 
 安裝react-router-dom v6
 $ npm i react-router-dom
@@ -12,10 +12,12 @@ import {HashRouter,Route,Routes} from "react-router-dom";
 import FirstPage from "./FirstPage";
 import SecondPage from "./SecondPage";
 import ThirthPage from './ThirthPage';
+import Layout from './Layout';
 
 const App6=()=>{
     return(
         <HashRouter>
+            <Layout></Layout>
             <Routes>
                 {/* http://localhost:3000/ */}
                 {/* http://localhost:3000/#/ */}
