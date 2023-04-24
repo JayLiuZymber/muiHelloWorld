@@ -5,15 +5,15 @@ https://ithelp.ithome.com.tw/articles/10226056
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-// import App6 from './App6';
+// import App from './App';
+import App6 from './App6';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <App />
-    {/* <App6 /> */}
+    {/* <App /> */}
+    <App6 />
   </div>
 );
 
