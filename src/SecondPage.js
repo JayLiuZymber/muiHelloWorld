@@ -13,6 +13,7 @@ const SecondPage=()=>{
     return(
         <div style={StyleSheet}>
             <h1 style={{color:"white",fontFamily:"Microsoft JhengHei"}}>我是第二頁</h1>
+            <img src={require("./rice.jpg")} alt="Rice"/>
         </div>
     )
 }
