@@ -6,14 +6,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import App6 from './App6';
+// import App6 from './App6';
+import MyApp3 from './MyApp3';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
     {/* <App /> */}
-    <App6 />
+    {/* <App6 /> */}
+    <React.StrictMode>
+      <MyApp3/>
+    </React.StrictMode>
   </div>
 );
 
