@@ -13,10 +13,11 @@ import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { green, red } from '@mui/material/colors';
 import Box from '@mui/material/Box';
-import LayoutAddSupplier from "./LayoutAddSupplier";
 import BarAddIcon from "@mui/icons-material/AddBusiness";
 import BarViewIcon from "@mui/icons-material/Store";
 import BarDeleteIcon from '@mui/icons-material/Delete';
+import LayoutSupplier from './LayoutSupplier';
+import LayoutAddSupplier from "./LayoutAddSupplier";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -122,7 +123,7 @@ export default function LayoutPurchase() {
         </Tabs>
       </AppBar>
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Item One
+          <LayoutSupplier></LayoutSupplier>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           <LayoutAddSupplier></LayoutAddSupplier>
