@@ -13,27 +13,31 @@ import TabsPSI from "./TabsPSI";
 import ButtonsPurchase from "./ButtonsPurchase";
 import ButtonsSales from "./ButtonsSales";
 import ButtonsInventory from "./ButtonsInventory";
+import TabsPurchase from "./TabsPurchase";
+import FloatingActionButtonZoom from "./FloatingActionButtonZoom";
+import LayoutPurchase from "./LayoutPurchase";
+import LayoutSales from "./LayoutSales";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <CssBaseline />
       <Container maxWidth="sm">
         <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }}>
-          <TabsPSI></TabsPSI>
-          <br />
-          <ButtonsPurchase></ButtonsPurchase>
-          <ButtonsSales></ButtonsSales>
-          <ButtonsInventory></ButtonsInventory>
-          <img src={logo} className="App-logo" alt="logo" />
-          {/* <BottomPSI></BottomPSI> */}
-          <BottomPurchase></BottomPurchase>
-          <BottomSales></BottomSales>
-          <BottomInventory></BottomInventory>
+          {/* <TabsPSI></TabsPSI> */}
+          <BottomPSI></BottomPSI>
+          {/* <TabsPurchase></TabsPurchase> */}
+          {/* <ButtonsPurchase></ButtonsPurchase> */}
+          {/* <ButtonsSales></ButtonsSales> */}
+          {/* <ButtonsInventory></ButtonsInventory> */}
+          <LayoutPurchase></LayoutPurchase>
+          {/* <LayoutSales></LayoutSales> */}
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          {/* <BottomPurchase></BottomPurchase> */}
+          {/* <BottomSales></BottomSales> */}
+          {/* <BottomInventory></BottomInventory> */}
         </Box>
       </Container>
     </div>
   );
 }
-
-export default App;

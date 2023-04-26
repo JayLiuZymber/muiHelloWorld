@@ -31,7 +31,7 @@ export default function ButtonsPurchase() {
       <Button variant="contained" startIcon={<AddIcon />}>
         Add
       </Button>
-      <Button variant="outlined" startIcon={<DeleteIcon />}>
+      <Button variant="contained" startIcon={<DeleteIcon />}>
         Delete
       </Button>
     </Stack>
