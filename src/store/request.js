@@ -8,6 +8,11 @@ import axios from 'axios';
 const URL = 'http://localhost'
 const PORT = 8000
 
+const urlRoot = axios.create({
+    // baseURL: 'http://127.0.0.1:8000'
+    // baseURL: 'http://localhost:8000'
+    baseURL: `${URL}:${PORT}`
+});
 // -----------------------------------------------------------------------------
 
 const urlSupplier = axios.create({
@@ -16,12 +21,15 @@ const urlSupplier = axios.create({
     baseURL: `${URL}:${PORT}/supp/`
 });
 const urlSupplierRoot = axios.create({
-    // baseURL: 'http://localhost:8000/supps/'
+    // baseURL: 'http://localhost:8000/'
     baseURL: `${URL}:${PORT}/supps/`
 });
 
-export const getSupplier = data => urlSupplier.get(`/${data}`);
-export const postSupplier = data => urlSupplierRoot.post(`/${data}`);
+export const getSupplier = taxid => urlSupplier.get(`${taxid}`);
+export const postSupplier = (taxid, name) => urlSupplierRoot.post('', {
+    taxid: taxid,
+    name: name
+});
 
 // -----------------------------------------------------------------------------
 
@@ -44,8 +52,11 @@ const urlCustomerRoot = axios.create({
     baseURL: `${URL}:${PORT}/custs/`
 });
 
-export const getCustomer = data => urlCustomer.get(`/${data}`);
-export const postCustomer = data => urlCustomerRoot.post(`/${data}`);
+export const getCustomer = taxid => urlCustomer.get(`${taxid}`);
+export const postCustomer = (taxid, name) => urlCustomerRoot.post('', {
+    taxid: taxid,
+    name: name
+});
 
 // -----------------------------------------------------------------------------
 
