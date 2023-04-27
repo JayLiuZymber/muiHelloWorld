@@ -5,7 +5,7 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 
-export default function LayoutAddSupplier () {
+export default function BoxAddCustomer () {
     return (
         <Box
             component="form"

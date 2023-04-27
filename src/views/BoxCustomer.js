@@ -2,38 +2,30 @@ import * as React from 'react';
 import {useState, useEffect} from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
 
-import { apiSupplier } from '../store/api.js';
+import { getCustomer } from '../store/request.js';
 
 
-export default function LayoutSupplier () {
+export default function BoxCustomer () {
     var [id,setId]=useState(0);
     var [taxid, setTaxid]=useState(0);
     var [name, setName]=useState("");
-    // var [json, setJson]=useState();
-    // var id, taxid, name;
-    // var json;
+    // var [json, setJson]=useState([]);
 
     useEffect(() => {
-        taxid = 22099131;
-        apiSupplier(taxid)
+        taxid = 22;
+        getCustomer(taxid)
                 .then((response)=> {
                     // console.log('response', response);
                     var json = response.data;
+                    // console.log('json', json);
+                    // console.log('id', json.id);
+                    // console.log('taxid', json.taxid);
+                    // console.log('name', json.name);
+
                     setId(json.id);
                     setTaxid(json.taxid);
                     setName(json.name);
-
-                    // id = json.id;
-                    // taxid = json.taxid;
-                    // name = json.name;
-                    console.log('json', json);
-                    // console.log('id', id);
-                    // console.log('taxid', taxid);
-                    // console.log('name', name);
                 })
                 .catch(err=> {
                     console.log(err);

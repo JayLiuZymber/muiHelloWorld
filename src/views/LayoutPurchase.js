@@ -13,11 +13,13 @@ import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { green, red } from '@mui/material/colors';
 import Box from '@mui/material/Box';
+// Floating Action Button
 import BarAddIcon from "@mui/icons-material/AddBusiness";
 import BarViewIcon from "@mui/icons-material/Store";
 import BarDeleteIcon from '@mui/icons-material/Delete';
-import LayoutSupplier from './LayoutSupplier';
-import LayoutAddSupplier from "./LayoutAddSupplier";
+
+import BoxSupplier from './BoxSupplier';
+import BoxAddSupplier from "./BoxAddSupplier";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -123,10 +125,10 @@ export default function LayoutPurchase() {
         </Tabs>
       </AppBar>
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <LayoutSupplier></LayoutSupplier>
+          <BoxSupplier></BoxSupplier>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <LayoutAddSupplier></LayoutAddSupplier>
+          <BoxAddSupplier></BoxAddSupplier>
         </TabPanel>
       {fabs.map((fab, index) => (
         <Zoom
