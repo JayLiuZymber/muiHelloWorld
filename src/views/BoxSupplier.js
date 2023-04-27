@@ -5,9 +5,10 @@ import TextField from '@mui/material/TextField';
 
 import { getSupplier } from '../store/request.js';
 
+// -----------------------------------------------------------------------------
 
 export default function BoxSupplier () {
-    var [id,setId]=useState(0);
+    var [id, setId]=useState(0);
     var [taxid, setTaxid]=useState(0);
     var [name, setName]=useState("");
     // var [json, setJson]=useState([]);

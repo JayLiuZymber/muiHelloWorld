@@ -21,6 +21,8 @@ import BarDeleteIcon from '@mui/icons-material/PersonOff';
 import BoxCustomer from './BoxCustomer';
 import BoxAddCustomer from './BoxAddCustomer';
 
+// -----------------------------------------------------------------------------
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 

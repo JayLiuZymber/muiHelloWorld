@@ -21,6 +21,8 @@ import BarDeleteIcon from '@mui/icons-material/Delete';
 import BoxSupplier from './BoxSupplier';
 import BoxAddSupplier from "./BoxAddSupplier";
 
+// -----------------------------------------------------------------------------
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 

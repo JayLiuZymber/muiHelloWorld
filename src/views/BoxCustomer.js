@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 
 import { getCustomer } from '../store/request.js';
 
+// -----------------------------------------------------------------------------
 
 export default function BoxCustomer () {
     var [id,setId]=useState(0);

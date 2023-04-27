@@ -19,6 +19,8 @@ import FloatingActionButtonZoom from "./components/FloatingActionButtonZoom";
 import LayoutPurchase from "./views/LayoutPurchase";
 import LayoutSales from "./views/LayoutSales";
 
+// -----------------------------------------------------------------------------
+
 export default function App() {
   return (
     <div className="App">
@@ -32,7 +34,7 @@ export default function App() {
           {/* <ButtonsSales></ButtonsSales> */}
           {/* <ButtonsInventory></ButtonsInventory> */}
           <LayoutPurchase></LayoutPurchase>
-          <LayoutSales></LayoutSales>
+          {/* <LayoutSales></LayoutSales> */}
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           {/* <BottomPurchase></BottomPurchase> */}
           {/* <BottomSales></BottomSales> */}
