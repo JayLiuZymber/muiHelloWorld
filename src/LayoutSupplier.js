@@ -12,7 +12,7 @@ import { apiSupplier } from './api.js';
 export default function LayoutSupplier () {
     var [id,setId]=useState(0);
     var [taxid, setTaxid]=useState(0);
-    var [suppName, setName]=useState("");
+    var [name, setName]=useState("");
     // var [json, setJson]=useState();
     // var id, taxid, name;
     // var json;
@@ -50,23 +50,20 @@ export default function LayoutSupplier () {
             autoComplete="off"
         >
             <TextField id="id" label="ID" variant="filled"
-                defaultValue={`${id}`}
+                value={id}
                 InputProps={{
                     readOnly: true,
                 }} />
-                {id}
             <TextField id="tax-id" label="Tax ID Number" variant="filled"
-                defaultValue={`${taxid}`}
+                value={taxid}
                 InputProps={{
                     readOnly: true,
                   }} />
-                {taxid}
             <TextField id="name" label="Name" variant="filled"
-                defaultValue={`${suppName}`}
+                value={name}
                 InputProps={{
                     readOnly: true,
                 }} />
-                {suppName}
         </Box>
     );
 }
