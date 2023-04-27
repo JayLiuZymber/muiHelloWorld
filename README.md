@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Startup
+### Startup React App
+See '1runFEapp.ps1' file or run:
+`$ npm test`
+
+### Startup BE App
+See '2runBEapp.ps1' file
+
 ## Available Scripts
 
 In the project directory, you can run:
