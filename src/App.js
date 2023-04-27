@@ -4,19 +4,20 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 // npm install @mui/icons-material
-import BottomPSI from "./BottomPSI";
-import BottomInventory from "./BottomInventory";
-import BottomSales from "./BottomSales";
-import BottomPurchase from "./BottomPurchase";
+import BottomPSI from "./components/BottomPSI";
+import BottomInventory from "./components/BottomInventory";
+import BottomSales from "./components/BottomSales";
+import BottomPurchase from "./components/BottomPurchase";
 
-import TabsPSI from "./TabsPSI";
-import ButtonsPurchase from "./ButtonsPurchase";
-import ButtonsSales from "./ButtonsSales";
-import ButtonsInventory from "./ButtonsInventory";
-import TabsPurchase from "./TabsPurchase";
-import FloatingActionButtonZoom from "./FloatingActionButtonZoom";
-import LayoutPurchase from "./LayoutPurchase";
-import LayoutSales from "./LayoutSales";
+import TabsPSI from './components/TabsPSI';
+import ButtonsPurchase from "./components/ButtonsPurchase";
+import ButtonsSales from "./components/ButtonsSales";
+import ButtonsInventory from "./components/ButtonsInventory";
+import TabsPurchase from "./components/TabsPurchase";
+import FloatingActionButtonZoom from "./components/FloatingActionButtonZoom";
+
+import LayoutPurchase from "./views/LayoutPurchase";
+import LayoutSales from "./views/LayoutSales";
 
 export default function App() {
   return (
