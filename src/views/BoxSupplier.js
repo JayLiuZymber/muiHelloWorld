@@ -8,25 +8,21 @@ import { getSupplier } from '../store/request.js';
 // -----------------------------------------------------------------------------
 
 export default function BoxSupplier () {
-    var [id, setId]=useState(0);
-    var [taxid, setTaxid]=useState(0);
-    var [name, setName]=useState("");
-    // var [json, setJson]=useState([]);
+    const [json, setJson]=useState({});
+
+    json.taxid = 22099131;
 
     useEffect(() => {
-        taxid = 22099131;
-        getSupplier(taxid)
+        getSupplier(json.taxid)
                 .then((response)=> {
                     // console.log('response', response);
-                    var json = response.data;
-                    // console.log('json', json);
-                    // console.log('id', json.id);
-                    // console.log('taxid', json.taxid);
-                    // console.log('name', json.name);
+                    const data = response.data;
 
-                    setId(json.id);
-                    setTaxid(json.taxid);
-                    setName(json.name);
+                    // console.log('json', data);
+                    console.log('id', data.id);
+                    // console.log('taxid', data.taxid);
+                    // console.log('name', data.name);
+                    setJson(data);
                 })
                 .catch(err=> {
                     console.log(err);
@@ -43,17 +39,17 @@ export default function BoxSupplier () {
             autoComplete="off"
         >
             <TextField id="id" label="ID" variant="filled"
-                value={id}
+                value={json.id || ''}
                 InputProps={{
                     readOnly: true,
                 }} />
             <TextField id="tax-id" label="Tax ID Number" variant="filled"
-                value={taxid}
+                value={json.taxid || ''}
                 InputProps={{
                     readOnly: true,
                   }} />
             <TextField id="name" label="Name" variant="filled"
-                value={name}
+                value={json.name || ''}
                 InputProps={{
                     readOnly: true,
                 }} />
