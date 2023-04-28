@@ -128,7 +128,7 @@ export default function BoxSupplier () {
         </Box>
 
         {fabs.map((fab, index) => (
-            <Fab sx={fab.sx} aria-label={fab.label} color={fab.color}
+            <Fab sx={fab.sx} aria-label={fab.label} color={fab.color} key={index}
                 onClick={() => {
                     buttonClick(fab.label);
                 }} >
