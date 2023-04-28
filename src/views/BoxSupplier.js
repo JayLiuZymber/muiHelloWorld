@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Fab from '@mui/material/Fab';
 import Zoom from '@mui/material/Zoom';
-import { green, red } from '@mui/material/colors';
+import { green, red, blue } from '@mui/material/colors';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -29,11 +29,11 @@ const fabRedStyle = {
     },
 };
 
-const fabGreenStyle = {
+const fabBlueStyle = {
     color: 'common.white',
-    bgcolor: green[500],
+    bgcolor: blue[500],
     '&:hover': {
-      bgcolor: green[600],
+      bgcolor: blue[600],
     },
 };
 
@@ -43,7 +43,7 @@ export default function BoxSupplier () {
     // json.taxid = 22099131;
     json.taxid = 111;
 
-    const getData = () => {
+    const getData = async () => {
         getSupplier(json.taxid)
             .then((response)=> {
                 // console.log('response', response);
@@ -78,7 +78,7 @@ export default function BoxSupplier () {
     const fabs = [
         {
             // color: 'secondary',
-            sx: { ...fabStyle, ...fabGreenStyle },
+            sx: { ...fabStyle, ...fabBlueStyle },
             icon: <EditIcon />,
             label: 'Edit',
         },
