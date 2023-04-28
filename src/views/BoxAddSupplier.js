@@ -45,7 +45,7 @@ export default function BoxAddSupplier () {
                 console.log(err);
             });
     }
-    
+
     const fabs = [
         {
             // color: 'secondary',
@@ -56,7 +56,7 @@ export default function BoxAddSupplier () {
     ];
 
     const buttonClick = (value) => {
-        console.log('value', value);
+        // console.log('value', value);
         if( value === 'Add' )
             postData();
     };
@@ -70,7 +70,7 @@ export default function BoxAddSupplier () {
             <Box
                 component="form"
                 sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
+                    '& > :not(style)': { m: 1, width: '30ch' },
                 }}
                 noValidate
                 autoComplete="off"

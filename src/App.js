@@ -33,7 +33,7 @@ export default function App() {
           {/* <ButtonsPurchase></ButtonsPurchase> */}
           {/* <ButtonsSales></ButtonsSales> */}
           {/* <ButtonsInventory></ButtonsInventory> */}
-          <LayoutPurchase></LayoutPurchase>
+          {/* <LayoutPurchase></LayoutPurchase> */}
           {/* <LayoutSales></LayoutSales> */}
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           {/* <BottomPurchase></BottomPurchase> */}

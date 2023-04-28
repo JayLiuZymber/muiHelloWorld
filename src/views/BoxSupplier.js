@@ -40,8 +40,8 @@ const fabBlueStyle = {
 export default function BoxSupplier () {
     const [ json, setJson ] = useState({});
 
-    // json.taxid = 22099131;
-    json.taxid = 111;
+    json.taxid = 22099131;
+    // json.taxid = 111;
 
     const getData = async () => {
         getSupplier(json.taxid)
@@ -91,17 +91,17 @@ export default function BoxSupplier () {
     ];
 
     const buttonClick = (value) => {
-        console.log('value', value);
+        // console.log('value', value);
         if( value === 'Edit')
         {
-
+            getData();
         }
         if( value === 'Delete' )
             deleteData();
     };
 
     useEffect(() => {
-        getData();
+        // getData();
     }, []);
 
     return (
@@ -109,7 +109,7 @@ export default function BoxSupplier () {
         <Box
             component="form"
             sx={{
-                '& > :not(style)': { m: 1, width: '25ch' },
+                '& > :not(style)': { m: 1, width: '14ch' },
             }}
             noValidate
             autoComplete="off"
@@ -120,15 +120,23 @@ export default function BoxSupplier () {
                 }}
                 value={json.id || ''} />
             <TextField id="tax-id" label="Tax ID Number" variant="filled"
-                InputProps={{
-                    readOnly: true,
-                  }}
-                  value={json.taxid || ''} />
+                defaultValue={json.taxid} >
+                {json.taxid}</TextField>
+        </Box>
+        <Box
+            component="form"
+            sx={{
+                '& > :not(style)': { m: 1, width: '30ch' },
+            }}
+            noValidate
+            autoComplete="off"
+        >
             <TextField id="name" label="Name" variant="filled"
                 InputProps={{
                     readOnly: true,
-                }}
-                value={json.name || ''} />
+                  }}
+                value={json.name || ''}>
+                {json.name}</TextField>
         </Box>
 
         {fabs.map((fab, index) => (

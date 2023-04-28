@@ -5,10 +5,13 @@ import PurchaseIcon from '@mui/icons-material/Storefront';
 import SalesIcon from '@mui/icons-material/Groups';
 import InventoryIcon from '@mui/icons-material/Inventory';
 
+// -----------------------------------------------------------------------------
+
 export default function TabsPSI() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
+    console.log('value', value);
     setValue(newValue);
   };
 

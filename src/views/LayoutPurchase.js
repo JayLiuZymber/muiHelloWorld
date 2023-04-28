@@ -84,12 +84,13 @@ export default function LayoutPurchase() {
           <Tab label="Add" {...a11yProps(1)} icon={<BarAddIcon />}/>
         </Tabs>
       </AppBar>
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          <BoxSupplier></BoxSupplier>
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-          <BoxAddSupplier></BoxAddSupplier>
-        </TabPanel>
+      
+      <TabPanel value={value} index={0} dir={theme.direction}>
+        <BoxSupplier></BoxSupplier>
+      </TabPanel>
+      <TabPanel value={value} index={1} dir={theme.direction}>
+        <BoxAddSupplier></BoxAddSupplier>
+      </TabPanel>
     </Box>
   );
 }
