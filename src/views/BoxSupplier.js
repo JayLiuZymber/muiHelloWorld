@@ -40,8 +40,25 @@ const fabGreenStyle = {
 export default function BoxSupplier () {
     const [ json, setJson ] = useState({});
 
-    json.taxid = 22099131;
-    // json.taxid = 111;
+    // json.taxid = 22099131;
+    json.taxid = 111;
+
+    const getData = () => {
+        getSupplier(json.taxid)
+            .then((response)=> {
+                // console.log('response', response);
+                const data = response.data;
+
+                // console.log('json', data);
+                console.log('id', data.id);
+                // console.log('taxid', data.taxid);
+                // console.log('name', data.name);
+                setJson(data);
+            })
+            .catch(err=> {
+                console.log(err);
+            })
+    }
 
     const deleteData = async () => {
         if( json.taxid ) {
@@ -84,20 +101,7 @@ export default function BoxSupplier () {
     };
 
     useEffect(() => {
-        getSupplier(json.taxid)
-                .then((response)=> {
-                    // console.log('response', response);
-                    const data = response.data;
-
-                    // console.log('json', data);
-                    console.log('id', data.id);
-                    // console.log('taxid', data.taxid);
-                    // console.log('name', data.name);
-                    setJson(data);
-                })
-                .catch(err=> {
-                    console.log(err);
-                })
+        getData();
     }, []);
 
     return (
