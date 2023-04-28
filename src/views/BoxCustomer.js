@@ -9,6 +9,7 @@ import { green, red, blue } from '@mui/material/colors';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import DownloadIcon from '@mui/icons-material/Download';
 
 import { getCustomer, deleteCustomer } from '../store/request.js';
 
@@ -79,7 +80,8 @@ export default function BoxCustomer () {
         {
             // color: 'secondary',
             sx: { ...fabStyle, ...fabBlueStyle },
-            icon: <EditIcon />,
+            // icon: <EditIcon />,
+            icon: <DownloadIcon />,
             label: 'Edit',
         },
         {
