@@ -53,28 +53,6 @@ function a11yProps(index) {
   };
 }
 
-const fabStyle = {
-  position: 'absolute',
-  bottom: 16,
-  right: 16,
-};
-
-const fabRedStyle = {
-  color: 'common.white',
-  bgcolor: red[500],
-  '&:hover': {
-    bgcolor: red[600],
-  },
-};
-
-const fabGreenStyle = {
-  color: 'common.white',
-  bgcolor: green[500],
-  '&:hover': {
-    bgcolor: green[600],
-  },
-};
-
 export default function LayoutPurchase() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -82,26 +60,6 @@ export default function LayoutPurchase() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  const transitionDuration = {
-    enter: theme.transitions.duration.enteringScreen,
-    exit: theme.transitions.duration.leavingScreen,
-  };
-
-  const fabs = [
-    {
-      color: 'primary',
-      sx: { ...fabStyle, ...fabRedStyle },
-      icon: <DeleteIcon />,
-      label: 'Delete',
-    },
-    {
-      color: 'secondary',
-      sx: { ...fabStyle, ...fabGreenStyle },
-      icon: <AddIcon />,
-      label: 'Add',
-    }
-  ];
 
   return (
     <Box
@@ -132,21 +90,6 @@ export default function LayoutPurchase() {
         <TabPanel value={value} index={1} dir={theme.direction}>
           <BoxAddSupplier></BoxAddSupplier>
         </TabPanel>
-      {fabs.map((fab, index) => (
-        <Zoom
-          key={fab.color}
-          in={value === index}
-          timeout={transitionDuration}
-          style={{
-            transitionDelay: `${value === index ? transitionDuration.exit : 0}ms`,
-          }}
-          unmountOnExit
-        >
-          <Fab sx={fab.sx} aria-label={fab.label} color={fab.color}>
-            {fab.icon}
-          </Fab>
-        </Zoom>
-      ))}
     </Box>
   );
 }

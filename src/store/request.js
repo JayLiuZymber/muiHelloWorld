@@ -1,4 +1,4 @@
-/* 
+/*
 使用Axios你的API都怎麼管理？ - I am Mike - Medium
 https://medium.com/i-am-mike/%E4%BD%BF%E7%94%A8axios%E6%99%82%E4%BD%A0%E7%9A%84api%E9%83%BD%E6%80%8E%E9%BA%BC%E7%AE%A1%E7%90%86-557d88365619
  */
@@ -25,7 +25,8 @@ const urlSupplierRoot = axios.create({
     baseURL: `${URL}:${PORT}/supps/`
 });
 
-export const getSupplier = taxid => urlSupplier.get(`${taxid}`);
+export const getSupplier = (taxid) => urlSupplier.get(`${taxid}`);
+export const deleteSupplier = (taxid) => urlSupplier.delete(`${taxid}`);
 export const postSupplier = (taxid, name) => urlSupplierRoot.post('', {
     taxid: taxid,
     name: name
@@ -52,7 +53,8 @@ const urlCustomerRoot = axios.create({
     baseURL: `${URL}:${PORT}/custs/`
 });
 
-export const getCustomer = taxid => urlCustomer.get(`${taxid}`);
+export const getCustomer = (taxid) => urlCustomer.get(`${taxid}`);
+export const deleteCustomer = (taxid) => urlCustomer.delete(`${taxid}`);
 export const postCustomer = (taxid, name) => urlCustomerRoot.post('', {
     taxid: taxid,
     name: name
