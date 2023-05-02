@@ -7,19 +7,19 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Zoom from '@mui/material/Zoom';
 import Fab from '@mui/material/Fab';
-import Box from '@mui/material/Box';
-import { green, red } from '@mui/material/colors';
-// Floating Action Button
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DeleteIcon from '@mui/icons-material/Delete';
-import BarAddIcon from "@mui/icons-material/AddBusiness";
-import BarViewIcon from "@mui/icons-material/Store";
-import BarDeleteIcon from '@mui/icons-material/Delete';
+import { green, red } from '@mui/material/colors';
+import Box from '@mui/material/Box';
+// Floating Action Button
+import BarAddIcon from "@mui/icons-material/PersonAddAlt";
+import BarViewIcon from "@mui/icons-material/Person";
+import BarDeleteIcon from '@mui/icons-material/PersonOff';
 
-import BoxSupplier from './BoxSupplier';
-import BoxAddSupplier from "./BoxAddSupplier";
+import BoxProduct from './BoxProduct';
+import BoxAddProduct from './BoxAddProduct';
 
 // -----------------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ function a11yProps(index) {
   };
 }
 
-export default function LayoutPurchase() {
+export default function LayoutProduct() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -82,14 +82,18 @@ export default function LayoutPurchase() {
         >
           <Tab label="View" {...a11yProps(0)} icon={<BarViewIcon />} />
           <Tab label="Add" {...a11yProps(1)} icon={<BarAddIcon />}/>
+          <Tab label="All" {...a11yProps(2)} icon={<BarAddIcon />}/>
         </Tabs>
       </AppBar>
-      
+
       <TabPanel value={value} index={0} dir={theme.direction}>
-        <BoxSupplier></BoxSupplier>
+        <BoxProduct />
       </TabPanel>
       <TabPanel value={value} index={1} dir={theme.direction}>
-        <BoxAddSupplier></BoxAddSupplier>
+        <BoxAddProduct></BoxAddProduct>
+      </TabPanel>
+      <TabPanel value={value} index={2} dir={theme.direction}>
+        {/* <BoxAddCustomer></BoxAddCustomer> */}
       </TabPanel>
     </Box>
   );

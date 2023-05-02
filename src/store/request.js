@@ -39,7 +39,14 @@ const urlProductRoot = axios.create({
     baseURL: `${URL}:${PORT}/prods/`
 })
 
-export const getProducts = () => urlProductRoot.get();
+export const getAllProducts = () => urlProductRoot.get();
+export const getProucts = (taxid) => urlSupplier.get(`${taxid}/prods/`);
+export const getProuct = (taxid, part_number) => urlSupplier.get(`${taxid}/prod/${part_number}`);
+export const deleteProuct = (taxid, part_number) => urlSupplier.delete(`${taxid}/prod/${part_number}`);
+export const postProduct = (taxid, part_number, name) => urlSupplier.post(`${taxid}/prod`, {
+    port_number: part_number,
+    name: name
+});
 
 // -----------------------------------------------------------------------------
 

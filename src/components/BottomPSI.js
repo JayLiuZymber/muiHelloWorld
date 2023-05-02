@@ -12,6 +12,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 
 import LayoutPurchase from "../views/LayoutPurchase";
 import LayoutSales from "../views/LayoutSales";
+import LayoutInventory from '../views/LayoutInventory';
 // -----------------------------------------------------------------------------
 
 function TabPanel(props) {
@@ -69,7 +70,7 @@ export default function BottomPSI() {
         <LayoutSales></LayoutSales>
       </TabPanel>
       <TabPanel value={value} index={2} dir={theme.direction}>
-        {/* <LayoutInventory></LayoutInventory> */}
+        <LayoutInventory></LayoutInventory>
       </TabPanel>
     </Box>
   );

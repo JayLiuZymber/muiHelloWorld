@@ -11,7 +11,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DownloadIcon from '@mui/icons-material/Download';
 
-import { getSupplier, deleteSupplier } from '../store/request.js';
+import { getProuct, deleteProuct } from '../store/request.js';
 
 // -----------------------------------------------------------------------------
 
@@ -38,14 +38,14 @@ const fabBlueStyle = {
     },
 };
 
-export default function BoxSupplier () {
+export default function BoxProduct () {
     const [ json, setJson ] = useState({});
 
-    // json.taxid = 22099131;
-    json.taxid = 111;
+    json.taxid = 22099131;
+    json.port_number = 90909;
 
     const getData = async () => {
-        getSupplier(json.taxid)
+        getProuct(json.taxid, json.port_number)
             .then((response)=> {
                 // console.log('response', response);
                 const data = response.data;
@@ -63,8 +63,8 @@ export default function BoxSupplier () {
 
     const deleteData = async () => {
         if( json.taxid ) {
-           deleteSupplier(json.taxid)
-            // deleteSupplier('111')
+            deleteProuct(json.taxid, json.port_number)
+            // deleteProuct('111')
                     .then((response)=> {
                         // console.log('response', response);
                         const data = response.data;
@@ -133,6 +133,9 @@ export default function BoxSupplier () {
             noValidate
             autoComplete="off"
         >
+            <TextField id="part-number" label="Part Number" variant="filled"
+                defaultValue={json.port_number || ''} >
+                {json.port_number}</TextField>
             <TextField id="name" label="Name" variant="filled"
                 InputProps={{
                     readOnly: true,
